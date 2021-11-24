@@ -1,0 +1,100 @@
+.buy
+    @include adaptiv-value('padding-top', 105, 60, 1)
+    @include adaptiv-value('padding-bottom', 105, 60, 1)
+    background: #ffffff
+    &__container
+    &__body
+        display: flex
+        @media (max-width: $md2 + px)//Less 992
+           flex-direction: column
+    &__cream
+    &__form
+        
+
+
+.cream-component ///////Separate
+    flex: 0 1 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    background-image: url('../../img/creamBg.png') 
+    background-repeat: no-repeat
+    background-position: left bottom            
+    @media (max-width: $md2 + px)//Less 992
+        background-position: center center
+        background-size: contain    
+    img
+        max-width: 100%
+.buy-component  ///////Separate
+    flex: 0 1 50%
+    @include adaptiv-value('padding-top', 50, 15, 1)
+    @include adaptiv-value('padding-left', 90, 20, 1)
+    @include adaptiv-value('padding-right', 90, 20, 1)
+    @include adaptiv-value('padding-bottom', 50, 35, 1)
+    display: flex
+    flex-direction: column
+    text-align: center
+    border: 3px solid #2B2847
+    &__title
+        font-weight: 500
+        @include adaptiv-value('font-size', 36, 20, 1)
+        line-height: calc(44px/36px * 100%)
+        &:not(:last-child)
+            margin-bottom: 3px
+    &__timer
+        font-weight: bold
+        @include adaptiv-value('font-size', 54, 36, 1)
+        line-height: calc(66px/54px * 100%)
+        letter-spacing: 0.05em
+        color: rgba(43, 40, 71, 0.8)
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 40, 22, 1)
+        &>*
+            font-weight: bold
+            @include adaptiv-value('font-size', 54, 36, 1)
+            line-height: calc(66px/54px * 100%)
+            letter-spacing: 0.05em
+            color: rgba(43, 40, 71, 0.8)
+    // &__hours
+    // &__minutes
+    // &__seconds
+    &__offer
+        font-weight: bold
+        @include adaptiv-value('font-size', 36, 20, 1)
+        line-height: calc(44px/36px * 100%)
+        letter-spacing: 0.05em
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__price
+        font-weight: bold
+        @include adaptiv-value('font-size', 54, 36, 1)
+        line-height: calc(66px/54px * 100%)
+        letter-spacing: 0.05em
+        color: #FF0000
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__oldPrice
+        font-weight: 500
+        font-size: 36px
+        line-height: calc(44px/36px * 100%)
+        text-decoration-line: line-through
+        color: rgba(43, 40, 71, 0.8)
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 30, 20, 1)
+    &__form
+        display: flex
+        flex-direction: column
+    &__input
+        padding: 14px 20px
+        font-weight: 300
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+        border: 1px solid rgba(43, 40, 71, 0.8)
+        margin-bottom: 10px
+    &__checkbox
+        text-align: left
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 20, 15, 1)
+    &__btn
+        padding: 10px 0

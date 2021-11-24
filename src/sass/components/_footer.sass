@@ -1,0 +1,101 @@
+.footer
+    @include adaptiv-value('padding-top', 105, 60, 1)
+    @include adaptiv-value('padding-bottom', 105, 60, 1)
+    background: $mainColor
+    &__container
+    &__body
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+        grid-gap: 20px
+        grid-row-gap: 50px
+    &__column
+        display: flex
+        flex-direction: column
+        &>*
+            color: #ffff
+    &__link
+        display: block
+        font-weight: 300
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+        text-decoration-line: underline
+        color: #FFFFFF
+        &:not(:last-child)
+            margin-bottom: 20px
+    &__title
+        font-weight: 600
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+        color: #FFFFFF
+        &:not(:last-child)
+            margin-bottom: 14px
+    &__details
+        p
+            font-weight: 300
+            font-size: 18px
+            line-height: calc(22px/18px * 100%)
+            color: #FFFFFF
+            &:not(:last-child)
+                margin-bottom: 15px
+    &__item
+        &:not(:last-child)
+            margin-bottom: 28px
+        span,a
+            display: block
+            font-weight: 300
+            font-size: 18px
+            line-height: calc(22px/18px * 100%)
+            color: #FFFFFF
+        a
+            @media (any-hover: hover )
+                &:hover
+                    text-decoration: underline
+    &__map
+        font-weight: 600
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+        text-decoration-line: underline
+        color: #FFFFFF
+        &:not(:last-child)
+            margin-bottom: 20px
+    &__city
+        font-weight: 600
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+        text-decoration-line: underline
+        color: #FFFFFF
+    &__search
+        padding-top: 46px
+        padding-bottom: 30px
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+    &__input
+        border: none
+        padding: 7px 2px
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__btn
+        display: inline-flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+        padding: 4px 15px
+        background: #ffffff
+        transition: all 0.3s ease 0s
+        
+        font-weight: 600
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+    &__social
+
+
+.social-footer
+    display: flex
+    &__item
+        font-size: 22px
+        color: #ffffff
+        &:not(:last-child)
+            margin-right: 36px
+

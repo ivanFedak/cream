@@ -1,0 +1,36 @@
+.details
+    @include adaptiv-value('padding-top', 105, 60, 1)
+    @include adaptiv-value('padding-bottom', 105, 60, 1)
+    background-color: #FFFFFF
+    &__container
+    &__body
+        display: flex
+        flex-direction: column
+    &__text
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 14, 1)
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 50, 30, 1)
+    &__buttons
+
+
+.details-component ///////////////////////////Separate
+    display: flex
+    flex-wrap: wrap
+    &__btn
+        @include adaptiv-value('padding-top', 14, 7, 1)
+        @include adaptiv-value('padding-left', 24, 20, 1)
+        @include adaptiv-value('padding-right', 24, 20, 1)
+        @include adaptiv-value('padding-bottom', 14, 7, 1)
+        border-radius: 25px
+        background-color: $milkColor
+        display: block
+        @include adaptiv-value('margin-bottom', 20, 10, 1)
+        @include adaptiv-value('margin-right', 58, 50, 1)
+        transition: all 0.3s ease 0s
+        @media (any-hover: hover )
+            &:hover
+                background-color: $mainColor
+                color: $milkColor

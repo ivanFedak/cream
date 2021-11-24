@@ -1,0 +1,16 @@
+.cream
+    @include adaptiv-value('padding-top', 105, 80, 1)
+    @include adaptiv-value('padding-bottom', 65, 40, 1)
+    &__container
+    &__body
+    &__title
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 50, 25, 1)
+    &__text
+        p
+            font-weight: 300
+            @include adaptiv-value('font-size', 18, 14, 1)
+            line-height: calc(22px/18px * 100%)
+            color: #000000
+            &:not(:last-child)
+                margin-bottom: 15px

@@ -1,0 +1,51 @@
+.order
+    @include adaptiv-value('padding-top', 105, 60, 1)
+    @include adaptiv-value('padding-bottom', 105, 60, 1)
+    &__container
+    &__title
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 70, 31, 1)
+    &__list
+    &__circle
+        @include adaptiv-value('padding-top', 100, 40, 1)
+
+
+.order-component ///Separate
+    display: flex
+    flex-direction: column
+    &__item
+        display: flex
+        align-items: center
+
+        font-weight: bold
+        @include adaptiv-value('font-size', 22, 16, 1)
+        line-height: calc(27px/22px * 100%)
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 43, 20, 1)
+        &::before
+            @include adaptiv-value('font-size', 55, 40, 1)
+            font-weight: 500
+            padding-right: 20px
+
+
+.circle-component ////Separate
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(175px, 1fr))
+    grid-gap: 40px
+    &__item
+        display: flex
+        flex-direction: column
+    &__image
+        align-self: stretch
+        padding: 0 0 100% 0
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 30, 10, 1)
+        img
+            border: 8px solid #EFD9C4
+            border-radius: 50%
+    &__text
+        font-weight: 300
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+        text-align: center
+        color: #000000

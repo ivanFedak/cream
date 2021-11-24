@@ -1,0 +1,65 @@
+.analogue
+    @include adaptiv-value('padding-top', 105, 60, 1)
+    @include adaptiv-value('padding-bottom', 105, 60, 1)
+    background-color: #fff
+    &__container
+    &__title
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 60, 25, 1)
+    &__wrapper
+    &__text
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 40, 15, 1)
+    &__label
+        font-weight: bold
+        @include adaptiv-value('font-size', 22, 16, 1)
+        line-height: calc(27px/22px * 100%)
+        letter-spacing: 0.05em
+        @media (max-width: $md4 + px)//Less
+           text-align: center
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 20, 10, 1)
+    &__body
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 60, 40, 1)
+    &__descr
+        font-weight: 300
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+
+
+    
+.analogue-component ///////////////////////////Separate
+    display: flex
+    flex-direction: column
+    &__item
+        &:not(:last-child)
+            margin-bottom: 5px
+    &__button
+        display: flex
+        align-items: center
+        width: 100%
+        padding: 14px 0
+        @include adaptiv-value('padding-left', 40, 10, 1)
+        background-color: $beige
+        border: 1px solid $mainColor
+        transition: all 0.3s ease 0s
+        color: #000
+        &::before
+            font-size: 22px
+        &._active
+            background: $mainColor
+            color: #fff
+    &__text
+        @include adaptiv-value('padding-top', 30, 10, 1)
+        @include adaptiv-value('padding-right', 60, 10, 1)
+        @include adaptiv-value('padding-left', 60, 10, 1)
+        @include adaptiv-value('padding-bottom', 30, 10, 1)
+        background: #F7F3F0
+        border: 1px solid $mainColor
+        
+        color: #000
+        font-weight: 300
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)

@@ -1,0 +1,75 @@
+.where
+    @include adaptiv-value('padding-top', 105, 60, 1)
+    @include adaptiv-value('padding-bottom', 105, 60, 1)
+    background-color: #FFFFFF
+    &__container
+    &__title
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 30, 22, 1)
+    &__body
+    &__text
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 14, 1)
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+    &__content
+        @include adaptiv-value('padding-top', 50, 20, 1)
+        display: flex
+        justify-content: space-between
+        align-items: center
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 50, 30, 1)
+        @media (max-width: $md3 + px) //Less 768
+           flex-direction: column
+    &__image
+        flex: 0 1 50%
+        @include adaptiv-value('padding-right', 80,0, 1)
+        @media (max-width: $md3 + px) //Less 768
+           padding: 0 0 30px 0
+        img
+            max-width: 100%
+    &__form
+        flex: 0 1 50%
+
+
+.where-component //////////Separate
+    @include adaptiv-value('padding-top', 40, 10, 1)
+    @include adaptiv-value('padding-right', 90, 20, 1)
+    @include adaptiv-value('padding-bottom', 50, 30, 1)
+    @include adaptiv-value('padding-left', 90, 20, 1)
+    border: 3px solid $mainColor
+    &__title
+        font-weight: bold
+        @include adaptiv-value('font-size', 36, 20, 1)
+        line-height: calc(44px/36px * 100%)
+        text-align: center
+        letter-spacing: 0.05em
+        &:not(:last-child)
+            margin-bottom: 10px
+    &__form
+        display: flex
+        flex-direction: column
+    &__input
+        padding: 14px 0
+        border: 1px solid rgba(43, 40, 71, 0.8)
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 14, 1)
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+        margin-bottom: 10px
+        text-align: center
+    &__checkbox
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 12, 1)
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+        display: flex
+        align-items: flex-start
+        &:not(:last-child)
+            margin-bottom: 20px
+        input
+            display: block
+            margin: 5px 17px 0 0
+    &__btn
+        min-width: 200px
+        padding: 10px

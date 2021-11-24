@@ -1,0 +1,70 @@
+.feedback
+    @include adaptiv-value('padding-top', 105, 60, 1)
+    @include adaptiv-value('padding-bottom', 105, 60, 1)
+    background: #ffffff
+    &__container
+    &__title
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 60, 40, 1)
+    &__body
+        display: flex
+        flex-direction: column
+    &__item
+
+
+.feedback-component ////////////Separate
+    background: #FFFFFF
+    border: 1px solid $mainColor
+    @include adaptiv-value('padding-top', 24, 14, 1)
+    @include adaptiv-value('padding-right', 30, 10, 1)
+    @include adaptiv-value('padding-bottom', 30, 17, 1)
+    @include adaptiv-value('padding-left', 30, 10, 1)
+    &:not(:last-child)
+        margin-bottom: 20px
+    &__title
+        font-weight: bold
+        font-size: 22px
+        line-height: calc(27px/22px * 100%)
+        &:not(:last-child)
+            margin-bottom: 20px
+    &__body
+        @media (max-width: $md4 + px)//Less 
+            display: flex
+            flex-direction: column
+    &__image
+        float: left
+        @include adaptiv-value('padding-right', 30, 20, 1)
+        @include adaptiv-value('width', 300, 200, 1)
+        @media (max-width: $md4 + px)//Less
+           display: flex
+           justify-content: center
+           width: auto
+           padding: 0 0 5px 0
+        img
+            border: 1px solid #2B2847
+            max-width: 100%
+
+    &__text
+        font-weight: 300
+        line-height: 150%
+        color: #000000
+    &__rating
+        text-align: right
+    &__name
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 14, 1)
+        line-height: 150%
+        color: #000000
+    &__city
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 14, 1)
+        line-height: 150%
+        color: #000000
+    &__stars
+        display: flex
+        justify-content: flex-end
+    &__star
+        color: #FFB900
+        font-size: 20px
+        &:not(:last-child)
+            margin-right: 3px

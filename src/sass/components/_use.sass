@@ -1,0 +1,45 @@
+.use
+    @include adaptiv-value('padding-top', 105, 60, 1)
+    @include adaptiv-value('padding-bottom', 105, 60, 1)
+    &__container
+    &__title
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 30, 10, 1)
+    &__text
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 14, 1)
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 40, 30, 1)
+    &__body
+
+
+.use-component /////////////Separate
+    counter-reset: section
+    &__item
+        position: relative
+        display: flex
+        align-items: center
+        font-weight: 500
+        @include adaptiv-value('font-size', 18, 14, 1)
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+        margin-bottom: 25px
+        &::before
+            counter-increment: section
+            content: counter(section)
+            display: flex
+            align-items: center
+            justify-content: center
+            flex: 0 0 50px
+            height: 50px
+            background: $mainColor
+            border-radius: 50%
+            font-weight: 900
+            font-size: 30px
+            line-height: calc(44px/36px * 100%)
+            text-align: center
+            letter-spacing: 0.05em
+            color: $milkColor
+            @include adaptiv-value('margin-right', 30, 10, 1)
