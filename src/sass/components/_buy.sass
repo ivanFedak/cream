@@ -115,5 +115,10 @@
                 @extend %ic
                 font-size: 18px
                 color: #ffffff
+    &__link
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 12, 1)
+        line-height: calc(22px/18px * 100%)
+        color: #000000
     &__btn
         padding: 10px 0

@@ -1071,6 +1071,13 @@ textarea {
   color: #ffffff;
 }
 
+.where-component__link {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 122.2222222222%;
+  color: #000000;
+}
+
 .where-component__btn {
   min-width: 200px;
   padding: 10px;
@@ -1548,6 +1555,13 @@ textarea {
 .buy-component__checkbox._active::before {
   font-size: 18px;
   color: #ffffff;
+}
+
+.buy-component__link {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 122.2222222222%;
+  color: #000000;
 }
 
 .buy-component__btn {
@@ -2075,6 +2089,10 @@ textarea {
     margin-bottom: calc(15px + 5 * ((100vw - 320px) / 1150));
   }
 
+  .where-component__link {
+    font-size: calc(12px + 6 * ((100vw - 320px) / 1150));
+  }
+
   .order {
     padding-top: calc(60px + 45 * ((100vw - 320px) / 1150));
   }
@@ -2233,6 +2251,10 @@ textarea {
 
   .buy-component__checkbox:not(:last-child) {
     margin-bottom: calc(15px + 5 * ((100vw - 320px) / 1150));
+  }
+
+  .buy-component__link {
+    font-size: calc(12px + 6 * ((100vw - 320px) / 1150));
   }
 
   .footer {
