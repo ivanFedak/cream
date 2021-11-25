@@ -2,10 +2,48 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/libs/slider.js":
-/*!*******************************!*\
-  !*** ./src/js/libs/slider.js ***!
-  \*******************************/
+/***/ "./src/js/modules/burger.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/burger.js ***!
+  \**********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+const burger = () => {
+  const btn = document.querySelector('.icon-menu'),
+        btnMenu = document.querySelector('.menu__menu'),
+        menu = document.querySelector('.menu__body');
+
+  function menuToggle() {
+    btn.classList.toggle('_active');
+    menu.classList.toggle('_active');
+    document.body.classList.toggle('_lock');
+  }
+
+  btn.addEventListener('click', menuToggle);
+  btnMenu.addEventListener('click', menuToggle);
+
+  function closeModal(e) {
+    const target = e.target;
+
+    if (!target.closest('.menu__body') && !target.closest('.icon-menu') && !target.closest('.menu__menu')) {
+      btn.classList.remove('_active');
+      menu.classList.remove('_active');
+      document.body.classList.remove('_lock');
+    }
+  }
+
+  document.addEventListener('click', closeModal);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (burger);
+
+/***/ }),
+
+/***/ "./src/js/modules/slider.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/slider.js ***!
+  \**********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -138,21 +176,38 @@ const slider = () => {
   // });
 
 
-  if (document.querySelector('.feedback__body')) {
-    new Swiper('.feedback__body', {
+  if (document.querySelector('.feedback-client__slider')) {
+    new Swiper('.feedback-client__slider', {
       observer: true,
       observeParents: true,
       slidesPerView: 1,
       spaceBetween: 30,
       speed: 800,
       loop: true,
-      watchOverflow: true // Arrows
-      // navigation: {
-      // 	nextEl: '.programs .programs__arrow_next',
-      // 	prevEl: '.programs .programs__arrow_prev',
-      // },
-
+      watchOverflow: true,
+      navigation: {
+        nextEl: '.feedback-client .feedback-arrows__next',
+        prevEl: '.feedback-client .feedback-arrows__prev'
+      }
     });
+  }
+
+  if (window.innerWidth <= 576) {
+    if (document.querySelector('.feedback-expert__slider')) {
+      new Swiper('.feedback-expert__slider', {
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        speed: 800,
+        loop: true,
+        watchOverflow: true,
+        navigation: {
+          nextEl: '.feedback-expert .feedback-arrows__next',
+          prevEl: '.feedback-expert .feedback-arrows__prev'
+        }
+      });
+    }
   }
 };
 
@@ -160,10 +215,10 @@ const slider = () => {
 
 /***/ }),
 
-/***/ "./src/js/libs/spoller.js":
-/*!********************************!*\
-  !*** ./src/js/libs/spoller.js ***!
-  \********************************/
+/***/ "./src/js/modules/spoller.js":
+/*!***********************************!*\
+  !*** ./src/js/modules/spoller.js ***!
+  \***********************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -391,41 +446,20 @@ const spoller = () => {
 
 /***/ }),
 
-/***/ "./src/js/modules/burger.js":
-/*!**********************************!*\
-  !*** ./src/js/modules/burger.js ***!
-  \**********************************/
+/***/ "./src/js/modules/swiperSettings.js":
+/*!******************************************!*\
+  !*** ./src/js/modules/swiperSettings.js ***!
+  \******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-const burger = () => {
-  const btn = document.querySelector('.icon-menu'),
-        btnMenu = document.querySelector('.menu__menu'),
-        menu = document.querySelector('.menu__body');
-
-  function menuToggle() {
-    btn.classList.toggle('_active');
-    menu.classList.toggle('_active');
-    document.body.classList.toggle('_lock');
+const sliderSettings = () => {
+  if (window.innerWidth <= 576) {
+    document.querySelector('.feedback-expert__slider').classList.add('_swiper');
   }
-
-  btn.addEventListener('click', menuToggle);
-  btnMenu.addEventListener('click', menuToggle);
-
-  function closeModal(e) {
-    const target = e.target;
-
-    if (!target.closest('.menu__body') && !target.closest('.icon-menu') && !target.closest('.menu__menu')) {
-      btn.classList.remove('_active');
-      menu.classList.remove('_active');
-      document.body.classList.remove('_lock');
-    }
-  }
-
-  document.addEventListener('click', closeModal);
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (burger);
+/* harmony default export */ __webpack_exports__["default"] = (sliderSettings);
 
 /***/ }),
 
@@ -574,11 +608,13 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _libs_spoller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./libs/spoller */ "./src/js/libs/spoller.js");
-/* harmony import */ var _libs_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libs/slider */ "./src/js/libs/slider.js");
+/* harmony import */ var _modules_spoller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/spoller */ "./src/js/modules/spoller.js");
+/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _services_default__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/default */ "./src/js/services/default.js");
 /* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
 /* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/timer */ "./src/js/modules/timer.js");
+/* harmony import */ var _modules_swiperSettings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/swiperSettings */ "./src/js/modules/swiperSettings.js");
+
 
 
 
@@ -588,8 +624,10 @@ __webpack_require__.r(__webpack_exports__);
 window.onload = function () {
   (0,_services_default__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_burger__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,_libs_spoller__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_modules_timer__WEBPACK_IMPORTED_MODULE_4__["default"])(); // slider();
+  (0,_modules_spoller__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_modules_timer__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  (0,_modules_swiperSettings__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])();
 };
 }();
 /******/ })()

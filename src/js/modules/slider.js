@@ -124,8 +124,8 @@ const slider = ()=>{
     // });
 
     
-	if (document.querySelector('.feedback__body')) {
-		new Swiper('.feedback__body', {
+	if (document.querySelector('.feedback-client__slider')) {
+		new Swiper('.feedback-client__slider', {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
@@ -133,13 +133,37 @@ const slider = ()=>{
 			speed: 800,
 			loop: true,
 			watchOverflow: true,
-			// Arrows
-			// navigation: {
-			// 	nextEl: '.programs .programs__arrow_next',
-			// 	prevEl: '.programs .programs__arrow_prev',
-			// },
+			navigation: {
+				nextEl: '.feedback-client .feedback-arrows__next',
+				prevEl: '.feedback-client .feedback-arrows__prev',
+			},
 
 		});
 	}
+
+	
+
+        if(window.innerWidth <= 576){
+
+            if (document.querySelector('.feedback-expert__slider')) {
+                new Swiper('.feedback-expert__slider', {
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    speed: 800,
+                    loop: true,
+                    watchOverflow: true,
+                    navigation: {
+                        nextEl: '.feedback-expert .feedback-arrows__next',
+                        prevEl: '.feedback-expert .feedback-arrows__prev',
+                    },
+        
+                });
+            }
+            
+        }
+
+
 }
 export default slider;

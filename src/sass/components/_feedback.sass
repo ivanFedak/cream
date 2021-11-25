@@ -9,9 +9,11 @@
     &__body
         display: flex
         flex-direction: column
+        min-width: 0
         &:not(:last-child)
             @include adaptiv-value('margin-bottom', 70, 40, 1)
     &__item
+        margin-bottom: 20px
 
 
 .feedback-component ////////////Separate
@@ -21,6 +23,10 @@
     @include adaptiv-value('padding-right', 30, 10, 1)
     @include adaptiv-value('padding-bottom', 30, 17, 1)
     @include adaptiv-value('padding-left', 30, 10, 1)
+    display: flex
+    flex-direction: column
+    @media (max-width: $md4 + px)
+       align-items: center
     &:not(:last-child)
         margin-bottom: 20px
     &__title
@@ -29,6 +35,8 @@
         line-height: calc(27px/22px * 100%)
         &:not(:last-child)
             margin-bottom: 20px
+        @media (max-width: $md4 + px)//Less 
+           text-align: center
     &__body
         @media (max-width: $md4 + px)//Less 
             display: flex
@@ -51,17 +59,17 @@
         line-height: 150%
         color: #000000
     &__rating
+        width: 100%
         text-align: right
-    &__name
-        font-weight: 300
-        @include adaptiv-value('font-size', 18, 14, 1)
-        line-height: 150%
-        color: #000000
-    &__city
-        font-weight: 300
-        @include adaptiv-value('font-size', 18, 14, 1)
-        line-height: 150%
-        color: #000000
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        justify-content: flex-end
+        &>*
+            font-weight: 300
+            @include adaptiv-value('font-size', 18, 14, 1)
+            line-height: 150%
+            color: #000000
     &__stars
         display: flex
         justify-content: flex-end
@@ -70,3 +78,24 @@
         font-size: 20px
         &:not(:last-child)
             margin-right: 3px
+
+
+
+.feedback-arrows
+    justify-content: center
+    &__arrow
+        background: none
+        font-size: 42px
+        color: $beige
+        &:not(:last-child)
+            margin-right: 40px
+    &__prev
+    &__next
+        transform: rotate(180deg)
+
+.feedback-expert__arrows 
+    display: none 
+    @media (max-width: $md4 + px)//Less 479
+        display: flex
+.feedback-client__arrows
+    display: flex
