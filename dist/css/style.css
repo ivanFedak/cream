@@ -397,9 +397,9 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -989,9 +989,9 @@ textarea {
 }
 
 .where-component {
-  padding-top: 40px;
+  padding-top: 55px;
   padding-right: 90px;
-  padding-bottom: 50px;
+  padding-bottom: 55px;
   padding-left: 90px;
   border: 3px solid #2B2847;
 }
@@ -1005,7 +1005,7 @@ textarea {
 }
 
 .where-component__title:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 29px;
 }
 
 .where-component__form {
@@ -1368,7 +1368,7 @@ textarea {
 }
 
 .no-webp .cream-component{
-  background-image: url("../../img/creamBg.png"); }
+  background-image: url("../img/creamBg.png"); }
 
 .cream-component {
   -webkit-box-flex: 0;
@@ -1994,7 +1994,7 @@ textarea {
   }
 
   .where-component {
-    padding-top: calc(10px + 30 * ((100vw - 320px) / 1150));
+    padding-top: calc(20px + 35 * ((100vw - 320px) / 1150));
   }
 
   .where-component {
@@ -2002,7 +2002,7 @@ textarea {
   }
 
   .where-component {
-    padding-bottom: calc(30px + 20 * ((100vw - 320px) / 1150));
+    padding-bottom: calc(30px + 25 * ((100vw - 320px) / 1150));
   }
 
   .where-component {
@@ -2011,6 +2011,10 @@ textarea {
 
   .where-component__title {
     font-size: calc(20px + 16 * ((100vw - 320px) / 1150));
+  }
+
+  .where-component__title:not(:last-child) {
+    margin-bottom: calc(9px + 20 * ((100vw - 320px) / 1150));
   }
 
   .where-component__input {
@@ -2195,6 +2199,9 @@ textarea {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 66.666%;
             flex: 0 1 66.666%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 
   .main__options {
@@ -2539,4 +2546,4 @@ textarea {
   }
 }
 
-.webp .cream-component{ background-image: url(../../img/creamBg.webp); }
+.webp .cream-component{ background-image: url(../img/creamBg.webp); }

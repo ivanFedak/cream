@@ -33,9 +33,9 @@
 
 
 .where-component //////////Separate
-    @include adaptiv-value('padding-top', 40, 10, 1)
+    @include adaptiv-value('padding-top', 55, 20, 1)
     @include adaptiv-value('padding-right', 90, 20, 1)
-    @include adaptiv-value('padding-bottom', 50, 30, 1)
+    @include adaptiv-value('padding-bottom', 55, 30, 1)
     @include adaptiv-value('padding-left', 90, 20, 1)
     border: 3px solid $mainColor
     &__title
@@ -45,7 +45,7 @@
         text-align: center
         letter-spacing: 0.05em
         &:not(:last-child)
-            margin-bottom: 10px
+            @include adaptiv-value('margin-bottom', 29, 9, 1)
     &__form
         display: flex
         flex-direction: column
