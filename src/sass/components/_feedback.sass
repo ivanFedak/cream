@@ -9,6 +9,8 @@
     &__body
         display: flex
         flex-direction: column
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 70, 40, 1)
     &__item
 
 

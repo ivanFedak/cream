@@ -124,43 +124,21 @@ const slider = ()=>{
     // });
 
     
-	if (document.querySelector('.programs__body')) {
-		new Swiper('.programs__body', {
+	if (document.querySelector('.feedback__body')) {
+		new Swiper('.feedback__body', {
 			observer: true,
 			observeParents: true,
-			slidesPerView: 3,
+			slidesPerView: 1,
 			spaceBetween: 30,
 			speed: 800,
 			loop: true,
 			watchOverflow: true,
 			// Arrows
-			navigation: {
-				nextEl: '.programs .programs__arrow_next',
-				prevEl: '.programs .programs__arrow_prev',
-			},
+			// navigation: {
+			// 	nextEl: '.programs .programs__arrow_next',
+			// 	prevEl: '.programs .programs__arrow_prev',
+			// },
 
-			breakpoints:{
-				//when window width is >= 320px //More
-				260:{
-					slidesPerView: 1,
-					spaceBetween: 10
-				},
-
-				320:{
-					slidesPerView: 1.1,
-					spaceBetween: 15
-				},
-
-				768:{
-					slidesPerView: 2,
-					spaceBetween: 20
-				},
-
-				992:{
-					slidesPerView: 3,
-					spaceBetween: 30
-				}
-			}
 		});
 	}
 }
