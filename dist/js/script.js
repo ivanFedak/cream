@@ -40,6 +40,60 @@ const burger = () => {
 
 /***/ }),
 
+/***/ "./src/js/modules/checkbox.js":
+/*!************************************!*\
+  !*** ./src/js/modules/checkbox.js ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+const checkBox = () => {
+  const checkBox = document.querySelectorAll('.buy-component__checkbox');
+  checkBox.forEach(item => {
+    const input = item.querySelector('input');
+
+    if (input.checked == true) {
+      item.classList.add('_active');
+    }
+
+    item.addEventListener('click', function (e) {
+      if (item.classList.contains('_active')) {
+        input.checked = false;
+        console.log(1);
+      } else {
+        input.checked = true;
+        console.log(2);
+      }
+
+      item.classList.toggle('_active');
+    });
+  });
+  const checkBox2 = document.querySelectorAll('.where-component__checkbox');
+  checkBox2.forEach(item => {
+    const input = item.querySelector('input');
+
+    if (input.checked == true) {
+      item.classList.add('_active');
+    }
+
+    item.addEventListener('click', function (e) {
+      if (item.classList.contains('_active')) {
+        input.checked = false;
+        console.log(1);
+      } else {
+        input.checked = true;
+        console.log(2);
+      }
+
+      item.classList.toggle('_active');
+    });
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (checkBox);
+
+/***/ }),
+
 /***/ "./src/js/modules/slider.js":
 /*!**********************************!*\
   !*** ./src/js/modules/slider.js ***!
@@ -613,7 +667,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_default__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/default */ "./src/js/services/default.js");
 /* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
 /* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/timer */ "./src/js/modules/timer.js");
-/* harmony import */ var _modules_swiperSettings__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/swiperSettings */ "./src/js/modules/swiperSettings.js");
+/* harmony import */ var _modules_checkbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/checkbox */ "./src/js/modules/checkbox.js");
+/* harmony import */ var _modules_swiperSettings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/swiperSettings */ "./src/js/modules/swiperSettings.js");
+
 
 
 
@@ -624,9 +680,10 @@ __webpack_require__.r(__webpack_exports__);
 window.onload = function () {
   (0,_services_default__WEBPACK_IMPORTED_MODULE_2__["default"])();
   (0,_modules_burger__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_modules_checkbox__WEBPACK_IMPORTED_MODULE_5__["default"])();
   (0,_modules_spoller__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_modules_timer__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_modules_swiperSettings__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  (0,_modules_swiperSettings__WEBPACK_IMPORTED_MODULE_6__["default"])();
   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])();
 };
 }();

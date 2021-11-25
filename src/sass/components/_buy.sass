@@ -94,7 +94,26 @@
         margin-bottom: 10px
     &__checkbox
         text-align: left
+        display: flex
         &:not(:last-child)
             @include adaptiv-value('margin-bottom', 20, 15, 1)
+        input
+            display: none
+        &::before
+            content: ''
+            display: block
+            flex: 0 0 18px
+            width: 18px
+            height: 18px
+            background: $mainColor
+            padding: 2px
+            margin-right: 17px
+            margin-top: 2px
+        &._active
+            @extend ._icon-check_2
+            &::before
+                @extend %ic
+                font-size: 18px
+                color: #ffffff
     &__btn
         padding: 10px 0
