@@ -34,15 +34,35 @@
     grid-gap: 40px
     &__item
         display: flex
+        align-items: center
         flex-direction: column
+        &:nth-child(1)
+            .circle-component__image
+                background-color: #96B488
+        &:nth-child(2)
+            .circle-component__image
+                padding-top: 25px
+                background-color: #E8A3A2
+        &:nth-child(3)
+            .circle-component__image
+                background-color: #A6C6D8
+        &:nth-child(4)
+            .circle-component__image
+                background-color: #E8C167
     &__image
-        align-self: stretch
-        padding: 0 0 100% 0
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 184px
+        width: 184px
+        border: 8px solid #EFD9C4
+        border-radius: 50%
+        background: #000
+        overflow: hidden
         &:not(:last-child)
-            @include adaptiv-value('margin-bottom', 30, 10, 1)
+            @include adaptiv-value('margin-bottom', 30, 20, 1)
         img
-            border: 8px solid #EFD9C4
-            border-radius: 50%
+            max-width: 100%
     &__text
         font-weight: 300
         font-size: 18px
