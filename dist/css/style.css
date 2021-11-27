@@ -852,12 +852,23 @@ textarea {
 }
 
 .analogue-component__button::before {
-  font-size: 22px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #000000;
+  margin-right: 5px;
 }
 
 .analogue-component__button._active {
   background: #2B2847;
   color: #fff;
+}
+
+.analogue-component__button._active::before {
+  border-top: 10px solid #ffffff;
 }
 
 .analogue-component__text {
@@ -1397,12 +1408,23 @@ textarea {
 }
 
 .questions__button::before {
-  font-size: 22px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #000000;
+  margin-right: 5px;
 }
 
 .questions__button._active {
   background: #2B2847;
   color: #fff;
+}
+
+.questions__button._active::before {
+  border-top: 10px solid #ffffff;
 }
 
 .questions__text {

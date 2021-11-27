@@ -48,10 +48,20 @@
         transition: all 0.3s ease 0s
         color: #000
         &::before
-            font-size: 22px
+            content: ''
+            display: block
+            width: 0
+            height: 0
+            border-left: 5px solid transparent
+            border-right: 5px solid transparent
+            border-top: 10px solid #000000
+            margin-right: 5px
         &._active
             background: $mainColor
             color: #fff
+            &::before
+                border-top: 10px solid #ffffff
+                
     &__text
         @include adaptiv-value('padding-top', 30, 10, 1)
         @include adaptiv-value('padding-right', 60, 10, 1)
