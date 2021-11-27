@@ -74,9 +74,6 @@
         return src(path.src.css)
             .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError)) //обработка
             .pipe(
-                group_media()
-            )
-            .pipe(
                 autoprefixer({//--webkit
                     overrideBrowserslist: ['last 5 version'],
                     cascade: true
