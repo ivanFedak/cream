@@ -22,10 +22,14 @@
         line-height: calc(27px/22px * 100%)
         &:not(:last-child)
             @include adaptiv-value('margin-bottom', 43, 20, 1)
-        &::before
-            @include adaptiv-value('font-size', 55, 40, 1)
-            font-weight: 500
-            padding-right: 20px
+    &__check
+        padding-right: 20px
+        img
+            @include adaptiv-value('width', 60, 40, 1)
+        // &::before
+        //     @include adaptiv-value('font-size', 55, 40, 1)
+        //     font-weight: 500
+            
 
 
 .circle-component ////Separate

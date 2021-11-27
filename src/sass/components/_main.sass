@@ -77,26 +77,36 @@
 .option-component /////Separate
     @media (max-width: $md1 + px)
         margin-top: 40px
+        gap: 60px
+    @media (max-width: $md2 + px)//Less
+        gap: 0px
+       
     &__item
         font-weight: bold
         font-size: 22px
         line-height: calc(27px/22px * 100%)
         display: flex
-        align-items: flex-start
+        align-items: center
         &:not(:last-child)
             margin-bottom: 50px
-        &::before
-            font-size: 55px
-            font-weight: 500
-            padding-right: 20px
         @media (max-width: $md1 + px)
             flex-direction: column
             align-items: center
-            &:not(:last-child)
-                margin-right: 63px
+            text-align: center
         @media (max-width: $md2 + px)//Less 
             flex-direction: row
+            text-align: left
             &:not(:last-child)
                 margin-right: 0
         @media (max-width: $md4 + px)//Less 479
             text-align: left
+    &__check
+        padding-right: 20px
+        @media (max-width: $md1 + px) 
+            padding: 0 0 5px 0
+        @media (max-width: $md2 + px)//Less 992
+            padding: 0 20px 0 0
+           
+        img
+            display: block
+ 

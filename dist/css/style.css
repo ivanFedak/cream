@@ -468,19 +468,21 @@ textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .option-component__item:not(:last-child) {
   margin-bottom: 50px;
 }
 
-.option-component__item::before {
-  font-size: 55px;
-  font-weight: 500;
+.option-component__check {
   padding-right: 20px;
+}
+
+.option-component__check img {
+  display: block;
 }
 
 .details {
@@ -1126,10 +1128,12 @@ textarea {
   margin-bottom: 43px;
 }
 
-.order-component__item::before {
-  font-size: 55px;
-  font-weight: 500;
+.order-component__check {
   padding-right: 20px;
+}
+
+.order-component__check img {
+  width: 60px;
 }
 
 .circle-component {
@@ -2151,8 +2155,8 @@ textarea {
     margin-bottom: calc(20px + 23 * ((100vw - 320px) / 1150));
   }
 
-  .order-component__item::before {
-    font-size: calc(40px + 15 * ((100vw - 320px) / 1150));
+  .order-component__check img {
+    width: calc(40px + 20 * ((100vw - 320px) / 1150));
   }
 
   .circle-component__image:not(:last-child) {
@@ -2322,6 +2326,7 @@ textarea {
 
   .option-component {
     margin-top: 40px;
+    gap: 60px;
   }
 
   .option-component__item {
@@ -2332,10 +2337,11 @@ textarea {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    text-align: center;
   }
 
-  .option-component__item:not(:last-child) {
-    margin-right: 63px;
+  .option-component__check {
+    padding: 0 0 5px 0;
   }
 }
 
@@ -2480,15 +2486,24 @@ textarea {
             flex-direction: column;
   }
 
+  .option-component {
+    gap: 0px;
+  }
+
   .option-component__item {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    text-align: left;
   }
 
   .option-component__item:not(:last-child) {
     margin-right: 0;
+  }
+
+  .option-component__check {
+    padding: 0 20px 0 0;
   }
 
   .composition-component__item:last-child {
