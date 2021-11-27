@@ -25,7 +25,7 @@
             img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}"
         },
         clean: "./" + project_folder + "/" //clean folder every time when we start gulp
-    }
+    };
 
 
     const   {src, dest} = require('gulp'),
@@ -130,7 +130,7 @@
         return src(path.src.img)
             .pipe(
                 webp({
-                    quality: 70
+                    quality: 95
                 })
             )
             .pipe(dest(path.build.img))
