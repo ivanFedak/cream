@@ -1,12 +1,12 @@
 
 import spoller from './modules/spoller';
-import slider from './modules/slider';
+// import slider from './modules/slider';
 
 import def from './services/default';
 import burger from './modules/burger';
-import timer from './modules/timer';
+// import timer from './modules/timer';
 import checkBox from './modules/checkbox'
-import sliderSettings from './modules/swiperSettings'
+// import sliderSettings from './modules/swiperSettings'
 
 
 
@@ -16,7 +16,7 @@ window.onload = function (){
     burger();
     checkBox();
     spoller();
-    timer();
-    sliderSettings();
-    slider();
-}
+    // timer();
+    // sliderSettings();
+    // slider();
+};  

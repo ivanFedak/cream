@@ -1,0 +1,104 @@
+.block-form
+    @include adaptiv-value('padding', 30, 15, 1)
+    background: #fff
+    &__container
+    &__title
+        @include adaptiv-value('font-size', 36, 20, 1)
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 36, 20, 1)
+
+.new-form
+    display: flex
+    flex-direction: column
+    &__row
+        display: flex
+        @include adaptiv-value('padding-bottom', 50, 20, 1)
+        @media (max-width: $md3 + px) //Less 768
+           display: flex
+           flex-direction: column
+    &__bottom
+        display: flex
+        justify-content: space-between
+        @media (max-width: $md3 + px) //Less 768
+           flex-direction: column
+    &__column
+        display: flex
+        flex-direction: column
+        flex: 0 1 50%
+        @media (min-width: $md3 + px)//More 768
+            &:first-child    
+                padding-right: 40px
+    &__uploadBlock
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 5px 20px
+        border: 1px solid rgba(43, 40, 71, 0.8)
+        margin-bottom: 10px
+        p
+            padding-right: 5px
+            font-weight: 300
+            font-size: 18px
+            line-height: calc(22px/18px * 100%)
+            color: #000000
+        @media (max-width: $md4 + px)//Less 479
+           padding: 5px 10px
+    &__label
+        cursor: pointer
+        input
+            display: none
+        p
+            color: $milkColor
+            padding: 10px
+    &__input
+        padding: 14px 20px
+        font-weight: 300
+        font-size: 18px
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+        border: 1px solid rgba(43, 40, 71, 0.8)
+        margin-bottom: 10px
+        -webkit-appearance: none
+    &__textarea
+        flex: 1 1 auto
+        @media (max-width: $md3 + px) //Less 768
+            height: 150px
+    &__checkbox
+        text-align: left
+        display: flex
+        @media (min-width: $md3 + px)//More 768  
+            width: 50%
+        &:not(:last-child)
+            @include adaptiv-value('margin-bottom', 20, 15, 1)
+        input
+            display: none
+        &._active
+            .new-form__check
+                img
+                    display: block
+    &__check
+        display: block
+        flex: 0 0 18px
+        width: 18px
+        height: 18px
+        background: $mainColor
+        padding: 2px
+        margin-right: 17px
+        margin-top: 2px
+        img
+            display: none
+    &__link
+        font-weight: 300
+        @include adaptiv-value('font-size', 18, 12, 1)
+        line-height: calc(22px/18px * 100%)
+        color: #000000
+    &__btn
+        padding: 10px 0
+        &:hover
+            background-color: #fff
+        @media (min-width: $md3 + px)//More 768
+            width: 50%
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+    -webkit-appearance: none

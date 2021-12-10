@@ -835,6 +835,47 @@
                 </div>
             </section>
             
+            <section class="block-form">
+                <div class='block-form__container _container'>
+                    <h2 class="block-form__title title">Свой отзыв Вы можете оставить здесь</h2>
+
+                    <form action="#" class="new-form">
+
+                        <div class="new-form__row">
+                            <div class="new-form__column">
+                                <input autocomplete='off' type='text' name='form[]' class='new-form__input' placeholder="Ваше имя">
+                                <div class="new-form__uploadBlock">
+                                    <p>Ваша фотография</p>
+                                    <label for="photo-upload" class="new-form__label">
+                                        <input type="file" class="#" id="photo-upload"/>
+                                        <p class="btn">Загрузить</p> 
+                                    </label>
+                                </div>
+                                <input autocomplete='off' type='text' name='form[]' class='new-form__input' placeholder="Город">
+                                <input autocomplete='off' type='number' name='form[]' class='new-form__input age' placeholder="Ваш возраст">
+                                <input autocomplete='off' type='number' name='form[]' class='new-form__input' min="1" max="5" placeholder="Ваша оценка продукта по пятибальной шкале">
+                            </div>
+                            <div class="new-form__column">
+                                <input autocomplete='off' type='text' name='form[]' class='new-form__input' placeholder="Заголовок отзыва">
+                                <textarea name="#" id="#" placeholder="Ваш отзыв" class="new-form__input new-form__textarea"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="new-form__bottom">
+                            <div class="new-form__checkbox">
+                                <input type="checkbox" checked>
+                                <span class="new-form__check">
+                                    <img src="./img/checkInput.png" alt="">
+                                </span>
+                                <a href="javascript:void(0);" class="new-form__link"> Используя эту форму, вы соглашаетесь с пользовательским соглашением</a>
+                            </div>
+
+                            <button class="new-form__btn btn">ОСТАВИТЬ ОТЗЫВ</button>
+                        </div>
+
+                    </form>
+                </div>
+            </section>
         </main>
         
         @@include('_footer.html')

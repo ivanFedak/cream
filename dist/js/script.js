@@ -88,184 +88,34 @@ const checkBox = () => {
       item.classList.toggle('_active');
     });
   });
+  const checkBox3 = document.querySelectorAll('.new-form__checkbox');
+  checkBox3.forEach(item => {
+    const input = item.querySelector('input');
+
+    if (input.checked == true) {
+      item.classList.add('_active');
+    }
+
+    item.addEventListener('click', function (e) {
+      if (item.classList.contains('_active')) {
+        input.checked = false;
+        console.log(1);
+      } else {
+        input.checked = true;
+        console.log(2);
+      }
+
+      item.classList.toggle('_active');
+    });
+  }); // const age = document.querySelector('.age');
+  // age.addEventListener('input',function(e){  
+  //     if(+age.value > 5){
+  //         age.value = 5;
+  //     }
+  // });
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (checkBox);
-
-/***/ }),
-
-/***/ "./src/js/modules/slider.js":
-/*!**********************************!*\
-  !*** ./src/js/modules/slider.js ***!
-  \**********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-const slider = () => {
-  //BildSlider
-  let sliders = document.querySelectorAll('._swiper');
-
-  if (sliders) {
-    for (let index = 0; index < sliders.length; index++) {
-      let slider = sliders[index];
-
-      if (!slider.classList.contains('swiper-bild')) {
-        let slider_items = slider.children;
-
-        if (slider_items) {
-          for (let index = 0; index < slider_items.length; index++) {
-            let el = slider_items[index];
-            el.classList.add('swiper-slide');
-          }
-        }
-
-        let slider_content = slider.innerHTML;
-        let slider_wrapper = document.createElement('div');
-        slider_wrapper.classList.add('swiper-wrapper');
-        slider_wrapper.innerHTML = slider_content;
-        slider.innerHTML = '';
-        slider.appendChild(slider_wrapper);
-        slider.classList.add('swiper-bild');
-
-        if (slider.classList.contains('_swiper_scroll')) {
-          let sliderScroll = document.createElement('div');
-          sliderScroll.classList.add('swiper-scrollbar');
-          slider.appendChild(sliderScroll);
-        }
-      }
-
-      if (slider.classList.contains('_gallery')) {//slider.data('lightGallery').destroy(true);
-      }
-    }
-
-    sliders_bild_callback();
-  }
-
-  function sliders_bild_callback(params) {}
-
-  let sliderScrollItems = document.querySelectorAll('._swiper_scroll');
-
-  if (sliderScrollItems.length > 0) {
-    for (let index = 0; index < sliderScrollItems.length; index++) {
-      const sliderScrollItem = sliderScrollItems[index];
-      const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
-      const sliderScroll = new Swiper(sliderScrollItem, {
-        observer: true,
-        observeParents: true,
-        direction: 'vertical',
-        slidesPerView: 'auto',
-        freeMode: true,
-        scrollbar: {
-          el: sliderScrollBar,
-          draggable: true,
-          snapOnRelease: false
-        },
-        mousewheel: {
-          releaseOnEdges: true
-        }
-      });
-      sliderScroll.scrollbar.updateSize();
-    }
-  }
-
-  function sliders_bild_callback(params) {} // let slider_about = new Swiper('.about__slider', {
-  //     /*
-  //     effect: 'fade',
-  //     autoplay: {
-  //         delay: 3000,
-  //         disableOnInteraction: false,
-  //     },
-  //     */
-  //     observer: true,
-  //     observeParents: true,
-  //     slidesPerView: 1,
-  //     spaceBetween: 0,
-  //     autoHeight: true,
-  //     speed: 800,
-  //     //touchRatio: 0,
-  //     //simulateTouch: false,
-  //     //loop: true,
-  //     //preloadImages: false,
-  //     //lazy: true,
-  //     // Dotts
-  //     //pagination: {
-  //     //	el: '.slider-quality__pagging',
-  //     //	clickable: true,
-  //     //},
-  //     // Arrows
-  //     navigation: {
-  //         nextEl: '.about__more .more__item_next',
-  //         prevEl: '.about__more .more__item_prev',
-  //     },
-  //     /*
-  //     breakpoints: {
-  //         320: {
-  //             slidesPerView: 1,
-  //             spaceBetween: 0,
-  //             autoHeight: true,
-  //         },
-  //         768: {
-  //             slidesPerView: 2,
-  //             spaceBetween: 20,
-  //         },
-  //         992: {
-  //             slidesPerView: 3,
-  //             spaceBetween: 20,
-  //         },
-  //         1268: {
-  //             slidesPerView: 4,
-  //             spaceBetween: 30,
-  //         },
-  //     },
-  //     */
-  //     on: {
-  //         lazyImageReady: function () {
-  //             ibg();
-  //         },
-  //     }
-  //     // And if we need scrollbar
-  //     //scrollbar: {
-  //     //	el: '.swiper-scrollbar',
-  //     //},
-  // });
-
-
-  if (document.querySelector('.feedback-client__slider')) {
-    new Swiper('.feedback-client__slider', {
-      observer: true,
-      observeParents: true,
-      slidesPerView: 1,
-      spaceBetween: 30,
-      speed: 800,
-      loop: true,
-      watchOverflow: true,
-      navigation: {
-        nextEl: '.feedback-client .feedback-arrows__next',
-        prevEl: '.feedback-client .feedback-arrows__prev'
-      }
-    });
-  }
-
-  if (window.innerWidth <= 576) {
-    if (document.querySelector('.feedback-expert__slider')) {
-      new Swiper('.feedback-expert__slider', {
-        observer: true,
-        observeParents: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        speed: 800,
-        loop: true,
-        watchOverflow: true,
-        navigation: {
-          nextEl: '.feedback-expert .feedback-arrows__next',
-          prevEl: '.feedback-expert .feedback-arrows__prev'
-        }
-      });
-    }
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (slider);
 
 /***/ }),
 
@@ -500,55 +350,6 @@ const spoller = () => {
 
 /***/ }),
 
-/***/ "./src/js/modules/swiperSettings.js":
-/*!******************************************!*\
-  !*** ./src/js/modules/swiperSettings.js ***!
-  \******************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-const sliderSettings = () => {
-  if (window.innerWidth <= 576) {
-    document.querySelector('.feedback-expert__slider').classList.add('_swiper');
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (sliderSettings);
-
-/***/ }),
-
-/***/ "./src/js/modules/timer.js":
-/*!*********************************!*\
-  !*** ./src/js/modules/timer.js ***!
-  \*********************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-const timer = () => {
-  const hours = document.querySelector('.buy-component__hours'),
-        minutes = document.querySelector('.buy-component__minutes'),
-        seconds = document.querySelector('.buy-component__seconds');
-  let time = 1800;
-  let timeInterval = setInterval(updateClock, 1000);
-
-  function updateClock() {
-    let minute = Math.floor(time / 60);
-    let second = time % 60;
-    second = second < 10 ? "0" + second : second;
-    minutes.innerHTML = minute;
-    seconds.innerHTML = second;
-    time--;
-
-    if (minutes.innerHTML <= 0 && seconds.innerHTML <= 0) {
-      clearInterval(timeInterval);
-    }
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (timer);
-
-/***/ }),
-
 /***/ "./src/js/services/default.js":
 /*!************************************!*\
   !*** ./src/js/services/default.js ***!
@@ -663,28 +464,23 @@ var __webpack_exports__ = {};
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_spoller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/spoller */ "./src/js/modules/spoller.js");
-/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
-/* harmony import */ var _services_default__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/default */ "./src/js/services/default.js");
-/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
-/* harmony import */ var _modules_timer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/timer */ "./src/js/modules/timer.js");
-/* harmony import */ var _modules_checkbox__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/checkbox */ "./src/js/modules/checkbox.js");
-/* harmony import */ var _modules_swiperSettings__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/swiperSettings */ "./src/js/modules/swiperSettings.js");
+/* harmony import */ var _services_default__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/default */ "./src/js/services/default.js");
+/* harmony import */ var _modules_burger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/burger */ "./src/js/modules/burger.js");
+/* harmony import */ var _modules_checkbox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/checkbox */ "./src/js/modules/checkbox.js");
+ // import slider from './modules/slider';
 
 
+ // import timer from './modules/timer';
 
-
-
-
-
+ // import sliderSettings from './modules/swiperSettings'
 
 window.onload = function () {
-  (0,_services_default__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  (0,_modules_burger__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  (0,_modules_checkbox__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  (0,_modules_spoller__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_modules_timer__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  (0,_modules_swiperSettings__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  (0,_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_services_default__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_modules_burger__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_modules_checkbox__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_modules_spoller__WEBPACK_IMPORTED_MODULE_0__["default"])(); // timer();
+  // sliderSettings();
+  // slider();
 };
 }();
 /******/ })()
